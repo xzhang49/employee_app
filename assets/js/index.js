@@ -1,11 +1,11 @@
 
 
 
-$("#add_user").submit(function(event){
+$("#add_employee").submit(function(event){
     alert("Data Inserted Successfully!")
 })
 
-$("#update_user").submit(function(event){
+$("#update_employee").submit(function(event){
     event.preventDefault();
 
     var unindexed_array = $(this).serializeArray();
@@ -18,7 +18,7 @@ $("#update_user").submit(function(event){
     console.log(data);
 
     var request = {
-        "url": `http://localhost:3000/api/users/${data.id}`,
+        "url": `http://localhost:3000/api/employees/${data.id}`,
         "method": "PUT",
         "data": data
     }
@@ -34,7 +34,7 @@ if(window.location.pathname == "/"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url": `http://localhost:3000/api/users/${id}`,
+            "url": `http://localhost:3000/api/emloyees/${id}`,
             "method": "DELETE"
         }
 
